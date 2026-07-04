@@ -50,7 +50,7 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4">
               {[FaFacebook, FaTwitter, FaInstagram, FaLinkedin].map((Icon, i) => (
-                <a key={i} href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-gradient-to-r from-gold-base via-gold-light to-gold-dark text-midnight hover:text-charcoal hover:border-gold-base transition-all duration-300">
+                <a key={i} href="#" target="_blank" rel="noopener noreferrer" aria-label="Social Media Link" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-gradient-to-r from-gold-base via-gold-light to-gold-dark text-midnight hover:text-charcoal hover:border-gold-base transition-all duration-300">
                   <Icon size={18} />
                 </a>
               ))}

@@ -42,7 +42,7 @@ Message: ${formData.get('message') || 'None'}`;
 
     const encodedMessage = encodeURIComponent(message);
     const whatsappNumber = "6584833901"; // Exact Singapore WhatsApp number provided
-    window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank', 'noopener,noreferrer');
     
     setIsSubmitted(true);
     
