@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-midnight: #0B0F19;
+  --color-onyx: #1A1F2C;
+  --color-gold-light: #FCF6BA;
+  --color-gold-base: #BF953F;
+  --color-gold-dark: #B38728;
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+}
+
+:root {
+  --background: #0B0F19;
+  --foreground: #ffffff;
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+body {
+  background: linear-gradient(135deg, var(--color-midnight), var(--color-onyx), var(--color-midnight));
+  background-attachment: fixed;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Custom Text Gradient Utility */
+.text-gradient-gold {
+  background: linear-gradient(to right, var(--color-gold-base), var(--color-gold-light), var(--color-gold-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Custom Selection */
+::selection {
+  background: var(--color-gold-base);
+  color: var(--color-midnight);
+}
+
+/* Hide scrollbar for cleaner look */
+::-webkit-scrollbar {
+  display: none;
+}
+* {
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Canvas utilities */
+.canvas-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Custom Scrollbar for specific elements that need it */
+.custom-scrollbar::-webkit-scrollbar {
+  display: block;
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--color-gold-base);
+  border-radius: 4px;
+}
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-gold-base) rgba(255, 255, 255, 0.05);
+}
