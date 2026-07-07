@@ -112,17 +112,6 @@ export default function Testimonials() {
               </div>
               
               <div className="flex items-center gap-5 mt-auto pt-6 border-t border-white/10">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-gold-base rounded-full blur-md opacity-0 group-hover:opacity-30 transition-opacity" />
-                  <Image 
-                    src={item.image} 
-                    alt={item.name} 
-                    width={56}
-                    height={56}
-                    unoptimized
-                    className="w-14 h-14 rounded-full object-cover border border-white/10 group-hover:border-gold-base/50 relative z-10 grayscale group-hover:grayscale-0 transition-all duration-500" 
-                  />
-                </div>
                 <div>
                   <h4 className="text-white font-serif text-xl group-hover:text-gold-light transition-colors">{item.name}</h4>
                   <p className="text-white/40 text-[10px] uppercase tracking-[0.2em] mt-1">{item.role}</p>
