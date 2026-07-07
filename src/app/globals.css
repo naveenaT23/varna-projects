@@ -91,3 +91,15 @@ body {
   scrollbar-width: thin;
   scrollbar-color: var(--color-gold-base) rgba(255, 255, 255, 0.05);
 }
+
+/* Custom Hover Scroll Animation */
+@keyframes slideImages {
+  0%, 20% { transform: translateX(0%); }
+  33%, 53% { transform: translateX(-33.3333%); }
+  66%, 86% { transform: translateX(-66.6666%); }
+  100% { transform: translateX(0%); }
+}
+
+@utility animate-slide-images {
+  animation: slideImages 9s infinite ease-in-out;
+}

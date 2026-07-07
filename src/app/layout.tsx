@@ -16,6 +16,8 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
+import SecurityWrapper from "@/components/SecurityWrapper";
+import SplashScreen from "@/components/SplashScreen";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://varnaprojects.com'),
@@ -70,12 +72,37 @@ export default function RootLayout({
       lang="en"
       className={`${playfair.variable} ${inter.variable} antialiased`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "RealEstateAgent",
+              "name": "Varna Projects",
+              "image": "https://varnaprojects.com/images/varna-logo-clean.png",
+              "description": "Varna Projects is a premium real estate and construction company in Visakhapatnam, offering luxury villas, commercial spaces, and layout ventures.",
+              "url": "https://varnaprojects.com",
+              "telephone": "+918000000000",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Visakhapatnam",
+                "addressRegion": "Andhra Pradesh",
+                "addressCountry": "IN"
+              }
+            })
+          }}
+        />
+      </head>
       <body className="bg-transparent text-white font-sans min-h-screen flex flex-col">
         <SmoothScroll>
-          <Navigation />
-          {children}
-          <Footer />
-          <WhatsAppWidget />
+          <SecurityWrapper>
+            <SplashScreen />
+            <Navigation />
+            {children}
+            <Footer />
+            <WhatsAppWidget />
+          </SecurityWrapper>
         </SmoothScroll>
       </body>
     </html>

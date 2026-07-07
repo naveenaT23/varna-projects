@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import { Menu, X } from "lucide-react";
+import EnquiryModal from "./EnquiryModal";
 
 const links = [
   { name: "Home", href: "/" },
@@ -21,6 +22,7 @@ const links = [
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isEnquiryModalOpen, setIsEnquiryModalOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -77,9 +79,9 @@ export default function Navigation() {
             );
           })}
           
-          <Link href="https://wa.me/6584833901?text=Hello%20Varna%20Projects%2C%20I%20would%20like%20to%20enquire%20about%20your%20luxury%20real%20estate%20properties." title="Enquire about Luxury Real Estate via WhatsApp" target="_blank" rel="noopener noreferrer" className="px-4 py-1.5 border border-gold-base text-gold-light hover:bg-gradient-to-r hover:from-gold-base hover:via-gold-light hover:to-gold-dark hover:text-midnight hover:border-transparent transition-all duration-300 uppercase tracking-widest text-[11px] font-medium rounded-sm text-center ml-2">
+          <button onClick={() => setIsEnquiryModalOpen(true)} title="Enquire about Luxury Real Estate" className="px-4 py-1.5 border border-gold-base text-gold-light hover:bg-gradient-to-r hover:from-gold-base hover:via-gold-light hover:to-gold-dark hover:text-midnight hover:border-transparent transition-all duration-300 uppercase tracking-widest text-[11px] font-medium rounded-sm text-center ml-2">
             Enquire Now
-          </Link>
+          </button>
         </nav>
 
         {/* Mobile Toggle */}
@@ -99,27 +101,29 @@ export default function Navigation() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "-100%" }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 bg-black/95 backdrop-blur-xl z-40 flex flex-col justify-center items-center h-screen space-y-6 overflow-y-auto pt-20 pb-10"
+            className="fixed inset-0 bg-black/95 backdrop-blur-xl z-40 h-[100dvh] overflow-y-auto scrollbar-thin scrollbar-thumb-gold-base/30 scrollbar-track-transparent"
           >
-            {links.map((link, i) => (
-              <motion.div
-                key={link.name}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 + 0.3 }}
-              >
-                <Link
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={clsx(
-                    "font-serif text-3xl md:text-5xl transition-colors",
-                    pathname === link.href ? "text-gold-light italic" : "text-white hover:text-gold-light"
-                  )}
+            <div className="flex flex-col items-center justify-start min-h-full py-24 space-y-8">
+              {links.map((link, i) => (
+                <motion.div
+                  key={link.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.1 + 0.3 }}
                 >
-                  {link.name}
-                </Link>
-              </motion.div>
-            ))}
+                  <Link
+                    href={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={clsx(
+                      "font-serif text-3xl md:text-5xl transition-colors",
+                      pathname === link.href ? "text-gold-light italic" : "text-white hover:text-gold-light"
+                    )}
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -144,6 +148,7 @@ export default function Navigation() {
           </motion.div>
         )}
       </AnimatePresence>
+      <EnquiryModal isOpen={isEnquiryModalOpen} onClose={() => setIsEnquiryModalOpen(false)} />
     </motion.header>
   );
 }

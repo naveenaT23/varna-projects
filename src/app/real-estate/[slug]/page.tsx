@@ -44,7 +44,7 @@ export default function RealEstateDetail() {
           transition={{ duration: 1, delay: 0.2 }}
           className="w-full h-[400px] md:h-[600px] bg-[#e5e5e5] relative overflow-hidden rounded-sm mb-16"
         >
-          <img src={service.image} alt={service.title} className="absolute inset-0 w-full h-full object-cover" />
+          <img src={service.images?.[0]} alt={service.title} className="absolute inset-0 w-full h-full object-cover" />
         </motion.div>
 
         <div className="max-w-4xl">

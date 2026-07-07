@@ -2,20 +2,44 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { Download } from "lucide-react";
 
 export default function WhatsAppWidget() {
   const whatsappUrl = "https://wa.me/916302938595"; // Using the India number
+  const brochureUrl = "/varna-brochure.pdf";
 
   return (
-    <div className="fixed bottom-8 right-8 z-50">
-      <Link href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+    <div className="fixed bottom-8 right-8 z-50 flex flex-col items-end gap-4">
+      {/* Download Brochure Button */}
+      <a 
+        href={brochureUrl} 
+        download
+        className="group relative"
+      >
         <motion.div
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(37,211,102,0.4)] cursor-pointer hover:shadow-[0_4px_30px_rgba(37,211,102,0.6)] transition-shadow duration-300 relative group"
+          className="w-14 h-14 bg-gradient-to-br from-gold-base to-gold-dark rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(191,149,63,0.4)] cursor-pointer hover:shadow-[0_4px_30px_rgba(191,149,63,0.6)] transition-shadow duration-300"
         >
           {/* Tooltip */}
-          <div className="absolute -top-12 right-0 bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs px-4 py-2 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none shadow-xl tracking-widest uppercase">
+          <div className="absolute top-1/2 -translate-y-1/2 right-16 bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs px-4 py-2 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none shadow-xl tracking-widest uppercase">
+            Download Brochure
+          </div>
+          
+          {/* Download Icon */}
+          <Download size={24} className="text-midnight" />
+        </motion.div>
+      </a>
+
+      {/* WhatsApp Button */}
+      <Link href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="group relative">
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          className="w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(37,211,102,0.4)] cursor-pointer hover:shadow-[0_4px_30px_rgba(37,211,102,0.6)] transition-shadow duration-300"
+        >
+          {/* Tooltip */}
+          <div className="absolute top-1/2 -translate-y-1/2 right-16 bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs px-4 py-2 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none shadow-xl tracking-widest uppercase">
             Chat with us
           </div>
           

@@ -8,31 +8,31 @@ const testimonials = [
     name: "Aarav Sharma",
     role: "CEO, TechNova Solutions",
     text: "Varna Projects delivered our corporate headquarters ahead of schedule. The precision and attention to luxury details are unparalleled in the industry.",
-    image: "https://i.pravatar.cc/150?img=11"
+    image: "https://ui-avatars.com/api/?name=Aarav+Sharma&background=d4af37&color=fff"
   },
   {
     name: "Priya Patel",
     role: "Investor",
     text: "Investing in Varna's commercial layouts has been my best financial decision. The locations are prime and the infrastructure is truly world-class.",
-    image: "https://i.pravatar.cc/150?img=5"
+    image: "https://ui-avatars.com/api/?name=Priya+Patel&background=1a1a1a&color=d4af37"
   },
   {
     name: "Rohan Kapoor",
     role: "Homeowner",
     text: "Living in a Varna property is an experience of pure elegance. The sustainable features combined with modern luxury make it a perfect home.",
-    image: "https://i.pravatar.cc/150?img=12"
+    image: "https://ui-avatars.com/api/?name=Rohan+Kapoor&background=d4af37&color=fff"
   },
   {
     name: "Nandini Reddy",
     role: "Retail Director",
     text: "The Galleria Mall project showcases their visionary approach. Their spaces are designed not just to house stores, but to create experiences.",
-    image: "https://i.pravatar.cc/150?img=9"
+    image: "https://ui-avatars.com/api/?name=Nandini+Reddy&background=1a1a1a&color=d4af37"
   },
   {
     name: "Vikram Singh",
     role: "Architectural Partner",
     text: "Collaborating with Varna Projects is seamless. Their dedication to uncompromising quality makes them a leader in luxury real estate development.",
-    image: "https://i.pravatar.cc/150?img=14"
+    image: "https://ui-avatars.com/api/?name=Vikram+Singh&background=d4af37&color=fff"
   }
 ];
 
