@@ -119,6 +119,7 @@ export default function Testimonials() {
                     alt={item.name} 
                     width={56}
                     height={56}
+                    unoptimized
                     className="w-14 h-14 rounded-full object-cover border border-white/10 group-hover:border-gold-base/50 relative z-10 grayscale group-hover:grayscale-0 transition-all duration-500" 
                   />
                 </div>
