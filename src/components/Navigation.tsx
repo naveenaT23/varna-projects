@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import EnquiryModal from "./EnquiryModal";
 
 const links = [
@@ -48,9 +49,12 @@ export default function Navigation() {
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="relative z-50 flex items-center group -ml-2 -my-2 md:-ml-4 md:-my-6">
-          <img 
+          <Image 
             src="/images/logo.png" 
             alt="Varna Projects" 
+            width={200}
+            height={100}
+            priority
             className="h-16 md:h-24 w-auto object-contain transition-all duration-500 group-hover:scale-105"
             style={{ filter: "hue-rotate(-135deg) saturate(1.5) brightness(1.2) contrast(1.1)" }}
           />

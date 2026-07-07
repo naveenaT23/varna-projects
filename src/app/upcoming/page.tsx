@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const upcomingProjects = [
   {
@@ -67,7 +68,7 @@ export default function Upcoming() {
                 className="w-full md:w-1/2 relative aspect-video rounded-3xl overflow-hidden shadow-2xl border border-white/10"
               >
                 <div className="absolute inset-0 bg-gradient-to-tr from-midnight/50 to-transparent z-10 mix-blend-overlay pointer-events-none" />
-                <img src={project.image} alt={project.title} className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-1000" />
+                <Image src={project.image} alt={project.title} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover scale-100 group-hover:scale-105 transition-transform duration-1000" />
               </motion.div>
               
               <motion.div

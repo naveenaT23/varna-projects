@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { realEstateData } from "@/data/realEstateData";
 
 export default function RealEstateClient() {
@@ -34,7 +35,7 @@ export default function RealEstateClient() {
                   <div className="flex w-[300%] h-full group-hover/img:animate-[slideImages_4s_infinite_ease-in-out]">
                     {service.images?.map((img, idx) => (
                       <div key={idx} className="w-1/3 h-full relative">
-                        <img src={img} alt={`${service.title} ${idx + 1}`} className="absolute inset-0 w-full h-full object-cover grayscale group-hover/img:grayscale-0 transition-all duration-1000" />
+                        <Image src={img} alt={`${service.title} ${idx + 1}`} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover grayscale group-hover/img:grayscale-0 transition-all duration-1000" />
                       </div>
                     ))}
                   </div>
@@ -86,7 +87,7 @@ export default function RealEstateClient() {
                  <div className="flex w-[300%] h-full group-hover/layoutImg:animate-[slideImages_4s_infinite_ease-in-out]">
                     {layout.images.map((img, idx) => (
                       <div key={idx} className="w-1/3 h-full relative">
-                        <img src={img} alt={`${layout.name} ${idx + 1}`} className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-700 mix-blend-luminosity group-hover:mix-blend-normal" />
+                        <Image src={img} alt={`${layout.name} ${idx + 1}`} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover opacity-80 group-hover:opacity-100 transition-all duration-700 mix-blend-luminosity group-hover:mix-blend-normal" />
                       </div>
                     ))}
                  </div>

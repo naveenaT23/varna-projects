@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Gallery() {
   const images = [
@@ -42,10 +43,12 @@ export default function Gallery() {
               transition={{ duration: 0.8, delay: (i % 3) * 0.2 }}
               className={`relative bg-[#0a0a0a] rounded-2xl overflow-hidden group cursor-pointer shadow-2xl border border-white/5 hover:border-gold-base/30 hover:shadow-gold-base/10 transition-all duration-700 w-full inline-block ${img.height}`}
             >
-              <img 
+              <Image 
                  src={img.src} 
                  alt={img.alt} 
-                 className="w-full h-full object-cover scale-100 group-hover:scale-110 transition-all duration-1000"
+                 fill
+                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                 className="object-cover scale-100 group-hover:scale-110 transition-all duration-1000"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-midnight/90 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
               

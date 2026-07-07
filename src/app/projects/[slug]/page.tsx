@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { useParams } from "next/navigation";
 import { projectsData } from "@/data/projectsData";
 
@@ -27,7 +28,7 @@ export default function ProjectDetail() {
       {/* Hero Section */}
       <section className="relative w-full h-[60vh] min-h-[500px] flex flex-col justify-end pb-16 px-6 md:px-12">
         <div className="absolute inset-0 z-0">
-          <img src={project.image} alt={project.name} className="w-full h-full object-cover" />
+          <Image src={project.image} alt={project.name} fill sizes="100vw" priority className="object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/80 to-transparent" />
         </div>
         

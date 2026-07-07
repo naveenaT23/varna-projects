@@ -4,6 +4,7 @@ import { realEstateData } from "@/data/realEstateData";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useParams } from "next/navigation";
+import Image from "next/image";
 
 export default function RealEstateDetail() {
   const params = useParams();
@@ -44,7 +45,7 @@ export default function RealEstateDetail() {
           transition={{ duration: 1, delay: 0.2 }}
           className="w-full h-[400px] md:h-[600px] bg-[#e5e5e5] relative overflow-hidden rounded-sm mb-16"
         >
-          <img src={service.images?.[0]} alt={service.title} className="absolute inset-0 w-full h-full object-cover" />
+          <Image src={service.images?.[0] || ""} alt={service.title} fill sizes="100vw" priority className="object-cover" />
         </motion.div>
 
         <div className="max-w-4xl">

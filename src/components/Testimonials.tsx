@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -64,10 +65,12 @@ export default function Testimonials() {
           }}
           className="absolute inset-0 w-full h-[140%] -top-[20%]"
         >
-          <img 
+          <Image 
             src="/images/skyline_tower.png" 
             alt="Varna Projects Architecture" 
-            className="w-full h-full object-cover opacity-20 grayscale mix-blend-screen"
+            fill
+            sizes="100vw"
+            className="object-cover opacity-20 grayscale mix-blend-screen"
           />
         </motion.div>
         
@@ -111,9 +114,11 @@ export default function Testimonials() {
               <div className="flex items-center gap-5 mt-auto pt-6 border-t border-white/10">
                 <div className="relative">
                   <div className="absolute inset-0 bg-gold-base rounded-full blur-md opacity-0 group-hover:opacity-30 transition-opacity" />
-                  <img 
+                  <Image 
                     src={item.image} 
                     alt={item.name} 
+                    width={56}
+                    height={56}
                     className="w-14 h-14 rounded-full object-cover border border-white/10 group-hover:border-gold-base/50 relative z-10 grayscale group-hover:grayscale-0 transition-all duration-500" 
                   />
                 </div>

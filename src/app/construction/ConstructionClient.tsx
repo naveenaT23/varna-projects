@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function ConstructionClient() {
   return (
@@ -44,7 +45,7 @@ export default function ConstructionClient() {
           </div>
           
           <div className="relative h-[600px] w-full border border-white/10 rounded-3xl overflow-hidden group shadow-2xl">
-             <img src="/images/construction_hero.png" alt="Engineering Render" className="absolute inset-0 w-full h-full object-cover brightness-[0.85] group-hover:scale-105 transition-transform duration-1000" />
+             <Image src="/images/construction_hero.png" alt="Engineering Render" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover brightness-[0.85] group-hover:scale-105 transition-transform duration-1000" />
              <div className="absolute inset-0 bg-gradient-to-t from-midnight/80 via-transparent to-transparent" />
              {/* Decorative lines */}
              <div className="absolute top-0 left-1/4 w-[1px] h-full bg-white/5" />
@@ -95,7 +96,7 @@ export default function ConstructionClient() {
               className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden group hover:bg-white/10 transition-all duration-500 hover:-translate-y-2 shadow-xl"
             >
               <div className="h-56 overflow-hidden relative border-b border-white/10">
-                <img src={feature.img} alt={feature.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                <Image src={feature.img} alt={feature.title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover group-hover:scale-110 transition-transform duration-700" />
                 <div className="absolute inset-0 bg-midnight/40 group-hover:bg-transparent transition-colors duration-500" />
               </div>
               <div className="p-8">
@@ -144,7 +145,7 @@ export default function ConstructionClient() {
             transition={{ duration: 0.8 }}
             className="relative h-[600px] rounded-3xl overflow-hidden border border-white/10 shadow-2xl"
           >
-            <img src="/images/construction_quality.png" alt="Quality Assurance" className="absolute inset-0 w-full h-full object-cover brightness-[0.8]" />
+            <Image src="/images/construction_quality.png" alt="Quality Assurance" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover brightness-[0.8]" />
             <div className="absolute inset-0 bg-gradient-to-tr from-midnight/80 via-transparent to-transparent" />
             <div className="absolute bottom-12 left-12">
                <p className="text-white font-serif text-3xl">Zero <span className="italic text-gold-light">Compromise</span></p>

@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, useInView, useMotionValue, animate, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import confetti from "canvas-confetti";
 
 export default function HomeSections() {
@@ -117,11 +118,14 @@ Message: ${formData.get('message') || 'None'}`;
           >
             <Link href="/projects">
               <div className="w-full aspect-[4/5] overflow-hidden bg-[#0a0a0a] rounded-2xl relative cursor-pointer shadow-2xl border border-white/5">
-                 <motion.img 
-                   style={{ y: yImage1, scale: 1.15 }} // Scaled up slightly to hide edges during parallax
-                   src="/images/architecture.png" alt="The Skyline Tower" 
-                   className="w-full h-full object-cover origin-center group-hover:scale-[1.2] transition-transform duration-[1.5s] ease-[cubic-bezier(0.16,1,0.3,1)]" 
-                 />
+                 <motion.div style={{ y: yImage1, scale: 1.15 }} className="absolute inset-0 w-full h-full">
+                   <Image 
+                     src="/images/architecture.png" alt="The Skyline Tower" 
+                     fill
+                     sizes="(max-width: 1024px) 100vw, 50vw"
+                     className="object-cover origin-center group-hover:scale-[1.2] transition-transform duration-[1.5s] ease-[cubic-bezier(0.16,1,0.3,1)]" 
+                   />
+                 </motion.div>
                  <div className="absolute inset-0 bg-gradient-to-t from-midnight/80 via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity duration-700" />
                  
                  <div className="absolute bottom-8 left-8 right-8">
@@ -144,11 +148,14 @@ Message: ${formData.get('message') || 'None'}`;
           >
             <Link href="/projects">
               <div className="w-full aspect-[4/5] overflow-hidden bg-[#0a0a0a] rounded-2xl relative cursor-pointer shadow-2xl border border-white/5">
-                 <motion.img 
-                   style={{ y: yImage2, scale: 1.15 }}
-                   src="/images/interior.png" alt="Aura Residences" 
-                   className="w-full h-full object-cover origin-center group-hover:scale-[1.2] transition-transform duration-[1.5s] ease-[cubic-bezier(0.16,1,0.3,1)]" 
-                 />
+                 <motion.div style={{ y: yImage2, scale: 1.15 }} className="absolute inset-0 w-full h-full">
+                   <Image 
+                     src="/images/interior.png" alt="Aura Residences" 
+                     fill
+                     sizes="(max-width: 1024px) 100vw, 50vw"
+                     className="object-cover origin-center group-hover:scale-[1.2] transition-transform duration-[1.5s] ease-[cubic-bezier(0.16,1,0.3,1)]" 
+                   />
+                 </motion.div>
                  <div className="absolute inset-0 bg-gradient-to-t from-midnight/80 via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity duration-700" />
                  
                  <div className="absolute bottom-8 left-8 right-8">
@@ -177,7 +184,7 @@ Message: ${formData.get('message') || 'None'}`;
           style={{ y: yImage4, scale: 1.2 }}
           className="absolute inset-0 z-0 opacity-20 pointer-events-none"
         >
-          <img src="/hero-frames/ezgif-frame-010.jpg" alt="Legacy Background" className="w-full h-full object-cover grayscale" />
+          <Image src="/hero-frames/ezgif-frame-010.jpg" alt="Legacy Background" fill sizes="100vw" className="object-cover grayscale" />
           <div className="absolute inset-0 bg-midnight/60 mix-blend-overlay" />
         </motion.div>
         
@@ -277,11 +284,14 @@ Message: ${formData.get('message') || 'None'}`;
             className="md:w-1/2 relative aspect-square md:aspect-video w-full rounded-3xl overflow-hidden shadow-2xl border border-white/10"
           >
              <div className="absolute inset-0 bg-gradient-to-tr from-gold-base/30 via-transparent to-transparent z-10 mix-blend-overlay pointer-events-none" />
-             <motion.img 
-               style={{ y: yImage3, scale: 1.2 }}
-               src="/hero-frames/ezgif-frame-030.jpg" alt="Quality Detail" 
-               className="w-full h-full object-cover origin-center hover:scale-105 transition-transform duration-1000" 
-             />
+             <motion.div style={{ y: yImage3, scale: 1.2 }} className="absolute inset-0 w-full h-full pointer-events-none">
+               <Image 
+                 src="/hero-frames/ezgif-frame-030.jpg" alt="Quality Detail" 
+                 fill
+                 sizes="(max-width: 768px) 100vw, 50vw"
+                 className="object-cover origin-center hover:scale-105 transition-transform duration-1000" 
+               />
+             </motion.div>
           </motion.div>
         </div>
       </section>

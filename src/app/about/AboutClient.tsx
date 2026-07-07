@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function AboutClient() {
   return (
@@ -79,7 +80,7 @@ export default function AboutClient() {
              </div>
              <div className="relative aspect-video rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
                 <div className="absolute inset-0 bg-gradient-to-tr from-midnight/80 to-transparent z-10 mix-blend-overlay" />
-                <img src="/hero-frames/ezgif-frame-040.jpg" alt="Varna Journey" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" />
+                <Image src="/hero-frames/ezgif-frame-040.jpg" alt="Varna Journey" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover grayscale hover:grayscale-0 transition-all duration-1000" />
              </div>
            </div>
         </motion.div>
@@ -98,7 +99,7 @@ export default function AboutClient() {
            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
              <div className="group relative rounded-3xl overflow-hidden border border-white/10 bg-white/5 shadow-2xl">
                 <div className="aspect-[4/5] overflow-hidden">
-                   <img src="/images/founder.png" alt="Bhanu Varma" className="w-full h-full object-cover object-top scale-100 group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0" />
+                   <Image src="/images/founder.png" alt="Bhanu Varma" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-top scale-100 group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0" />
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-midnight via-midnight/80 to-transparent pt-32">
                    <h3 className="text-3xl font-serif text-white mb-2 group-hover:text-gold-light transition-colors duration-500">Bhanu Varma</h3>
@@ -108,7 +109,7 @@ export default function AboutClient() {
              
              <div className="group relative rounded-3xl overflow-hidden border border-white/10 bg-white/5 shadow-2xl md:mt-16">
                 <div className="aspect-[4/5] overflow-hidden">
-                   <img src="/images/ceo.jpg" alt="Naveena Varma" className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0" />
+                   <Image src="/images/ceo.jpg" alt="Naveena Varma" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover scale-100 group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0" />
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-midnight via-midnight/80 to-transparent pt-32">
                    <h3 className="text-3xl font-serif text-white mb-2 group-hover:text-gold-light transition-colors duration-500">Naveena Varma</h3>

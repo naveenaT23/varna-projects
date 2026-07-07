@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { projectsData } from "@/data/projectsData";
 
 export default function ProjectsClient() {
@@ -29,7 +30,7 @@ export default function ProjectsClient() {
                 transition={{ duration: 0.8, delay: i * 0.1 + 0.5 }}
                 className="group relative h-96 w-full overflow-hidden bg-transparent border border-white/10 rounded-sm cursor-pointer"
               >
-                <img src={project.image} alt={project.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
+                <Image src={project.image} alt={project.name} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-1000" />
                 
                 <div className="absolute inset-0 bg-transparent/40 group-hover:bg-transparent/20 transition-colors duration-500" />
                 

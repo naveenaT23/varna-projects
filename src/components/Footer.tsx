@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -39,9 +40,11 @@ export default function Footer() {
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
-            <img 
+            <Image 
               src="/images/logo.png" 
               alt="Varna Projects" 
+              width={224}
+              height={112}
               className="h-20 md:h-28 w-auto object-contain -ml-4 -mt-4 mb-2"
               style={{ filter: "hue-rotate(-135deg) saturate(1.5) brightness(1.2) contrast(1.1)" }}
             />
